@@ -4,5 +4,16 @@ const CountryView = require('./views/country_view.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('JavaScript Loaded');
+  // console.log('JavaScript Loaded');
+const selectElement = document.querySelector('select#countries');
+const selectView = new SelectView(selectElement);
+selectView.bindEvents();
+
+const countryContainer = document.querySelector('#country');
+const countryView = new CountryView(countryContainer);
+countryView.bindEvents();
+
+ const countries = new Countries('https://restcountries.eu/rest/v2/all');
+ countries.bindEvents();
+ countries.getData();
 });
