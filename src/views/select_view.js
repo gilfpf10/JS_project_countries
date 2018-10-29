@@ -1,20 +1,16 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-
-const SelectView = function (selectElement){
+const SelectView = function (selectElement) {
   this.element = selectElement;
-
-
 };
 
-SelectView.prototype.bindEvents = function (){
-  PubSub.subscribe('Countries:countries-data-ready', (event) => {
-    this.populate(event.detail)
-
+SelectView.prototype.bindEvents = function () {
+  PubSub.subscribe('Countries:countries-data-ready', (evt) => {
+    this.populate(evt.detail)
   });
 
-  this.element.addEventListener('change', (event) => {
-    const selectIndex =event.target.value;
+  this.element.addEventListener('change', (evt) => {
+    const selectedIndex = evt.target.value;
     PubSub.publish('SelectView:change', selectedIndex);
   })
 };
@@ -26,12 +22,11 @@ SelectView.prototype.populate = function (countries) {
   });
 };
 
-SelectView.prototype.createOption = function (name, index){
+SelectView.prototype.createOption = function (name, index) {
   const option = document.createElement('option');
   option.textContent = name;
   option.value = index;
   return option;
-
 };
 
 module.exports = SelectView;
