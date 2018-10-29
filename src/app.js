@@ -15,4 +15,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const countries = new Countries('https://restcountries.eu/rest/v2/all');
   countries.bindEvents();
   countries.getData();
+
+  const newItemform = document.querySelector('#new-item-form');
+  newItemform.addEventListener('submit', handleNewItemFormSubmit);
+
+  // const deletteAllButton = document.querySelector('#delete-all');
+  // deleteAllButton.addEventListener('click', handleDeleteAllClick);
 });
+
+const handleNewItemFormSubmit = function (event){
+  event.preventDefault();
+
+  // console.log('works');
+
+  const readingListItem = createReadingListItem(event.target);
+  const readingList = document.querySelector('#reading-list');
+  readingList.appendChild(readingListItem);
+
+  event.target.reset();
+
+}
+
+const createReadingListItem = function (form){
+  const readingListItem = document.createElement('li');
+  readingListItem.classList.add('reading-list-item');
+
+
+
+const country = document.createElement('h3');
+country.textcontent = country.name;
+readingListItem.appendChild(country);
+
+return readingListItem;
+
+}

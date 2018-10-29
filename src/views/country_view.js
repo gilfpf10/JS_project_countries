@@ -83,7 +83,7 @@ CountryView.prototype.populateCurrenciesList = function (currencies, list) {
   });
 };
 CountryView.prototype.clearCountry = function () {
-  this.container.innerHTML = '';
+  // this.container.innerHTML = '';
 };
 
 module.exports = CountryView;
