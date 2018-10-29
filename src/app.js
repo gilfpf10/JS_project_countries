@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const newItemform = document.querySelector('#new-item-form');
   newItemform.addEventListener('submit', handleNewItemFormSubmit);
 
-  // const deletteAllButton = document.querySelector('#delete-all');
-  // deleteAllButton.addEventListener('click', handleDeleteAllClick);
+  const deleteAllButton = document.querySelector('#delete-all');
+  deleteAllButton.addEventListener('click', handleDeleteAllClick);
 });
 
 const handleNewItemFormSubmit = function (event){
@@ -37,15 +37,22 @@ const handleNewItemFormSubmit = function (event){
 }
 
 const createReadingListItem = function (form){
+  console.log(form);
   const readingListItem = document.createElement('li');
   readingListItem.classList.add('reading-list-item');
 
 
+  const country = document.createElement('h3');
+  country.textContent = this.name; //this bit needs fixed
+  readingListItem.appendChild(country);
 
-const country = document.createElement('h3');
-country.textcontent = country.name;
-readingListItem.appendChild(country);
+  return readingListItem;
 
-return readingListItem;
+}
+
+const handleDeleteAllClick = function (event){
+  const readingList = document.querySelector('#reading-list');
+  readingList.innerHTML = '';
+
 
 }
