@@ -33,19 +33,19 @@ CountryView.prototype.render = function (country) {
   this.populateLanguageList(country.languages, languagesList);
   this.container.appendChild(languagesList);
 
-  const callingCodesTitle = this.createTextElement('h3', 'Calling Code');
+  const callingCodesTitle = this.createTextElement('h3', 'Calling Code:');
   this.container.appendChild(callingCodesTitle);
 
   const callingCodes = this.createTextElement('p', country.callingCodes);
   this.container.appendChild(callingCodes);
 
-  const populationTitle = this.createTextElement('h3', 'Total Population');
+  const populationTitle = this.createTextElement('h3', 'Total Population:');
   this.container.appendChild(populationTitle);
 
   const population = this.createTextElement('p', country.population);
   this.container.appendChild(population);
 
-  const capitalTitle = this.createTextElement('h3', 'Capital City');
+  const capitalTitle = this.createTextElement('h3', 'Capital City:');
   this.container.appendChild(capitalTitle);
 
   const capital = this.createTextElement('p', country.capital);
