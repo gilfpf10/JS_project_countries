@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
+const ReadingList = ('./reading_list.js');
 
 const CountryView = function (container) {
   this.container = container;

@@ -1,4 +1,8 @@
+body {
+  font-family:"Times New Roman", Times, serif;
+  background-color: #F8F8F8;
+}
+
 img {
-    width: 120%;
-    height: auto;
+  width: 50px;
 }
