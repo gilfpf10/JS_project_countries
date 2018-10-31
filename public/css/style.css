@@ -4,4 +4,11 @@ body {
 }
 
 img {
-  width: 50px;
+  width: 100px;
+}
+
+body {
+  background-image: url("./images/world_map.png");
+  width: auto;
+  height: auto;
+}
