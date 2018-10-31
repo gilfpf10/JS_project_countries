@@ -9,10 +9,12 @@ CountryView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:selected-country-ready', (evt) => {
     this.clearCountry();
     this.render(evt.detail);
+    this.render(click.event);
 
   });
   PubSub.subscribe('ReadingList:country-submited', (evt) =>{
     this.render(evt.detail); // reading list subscribe
+
 
   });
 };
@@ -61,6 +63,13 @@ CountryView.prototype.render = function (country) {
 
   const currenciesListTitle = this.createTextElement('h3', 'Currencies:');
   this.container.appendChild(currenciesListTitle);
+
+// save button
+  const saveButtonTitle = this.createElement('button')
+  saveButtonTitle.addEventListener('click', (event) () => {
+    PubSub.publish('button',country);
+  });
+
 
   const currenciesList = document.createElement('ul');
   this.populateCurrenciesList(country.currencies, currenciesList);

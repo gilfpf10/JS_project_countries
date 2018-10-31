@@ -1,13 +1,22 @@
 const PubSub = require('../helpers/pub_sub.js');
 const CountryView = require('./country_view.js');
-// container
+
 const ReadingList = function (container){
   this.container = container;
 
 };
 
+// save button
+ReadingList.prototype.bindEvents = function () {
+  const form = document.querySelector('#reading-list');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputtedText = event.
 
-// reading list publish
+  }
+};
+
+
 ReadingList.prototype.handleSubmit = function (evt){
   evt.preventDefault();
   const newCountry = this.createCountry(evt.target);
@@ -24,7 +33,4 @@ ReadingList.prototype.createCountry = function (container) {
   return newCountry;
 };
 
-ReadingList.prototype.createButton = function (save){
-  
-}
 module.exports = ReadingList;
