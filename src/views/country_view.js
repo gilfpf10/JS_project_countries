@@ -64,11 +64,11 @@ CountryView.prototype.render = function (country) {
   const currenciesListTitle = this.createTextElement('h3', 'Currencies:');
   this.container.appendChild(currenciesListTitle);
 
-// save button
-  const saveButtonTitle = this.createElement('button')
-  saveButtonTitle.addEventListener('click', (event) () => {
-    PubSub.publish('button',country);
-  });
+// // save button
+//   const saveButtonTitle = this.createElement('button')
+//   saveButtonTitle.addEventListener('click', (event) () => {
+//     PubSub.publish('button',country);
+//   });
 
 
   const currenciesList = document.createElement('ul');

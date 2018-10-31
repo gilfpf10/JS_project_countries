@@ -7,14 +7,14 @@ const ReadingList = function (container){
 };
 
 // save button
-ReadingList.prototype.bindEvents = function () {
-  const form = document.querySelector('#reading-list');
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const inputtedText = event.
-
-  }
-};
+// ReadingList.prototype.bindEvents = function () {
+//   const form = document.querySelector('#reading-list');
+//   form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const inputtedText = event.
+//
+//   }
+// };
 
 
 ReadingList.prototype.handleSubmit = function (evt){
